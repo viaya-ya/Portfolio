@@ -25,7 +25,6 @@ export function Main() {
 
 const StyledMain = styled.main`
     min-height: 100vh;
-    background-color: rosybrown;
 `
 
 const Photo = styled.img`

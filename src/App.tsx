@@ -19,11 +19,6 @@ function App() {
     )
 }
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div``
 
-    border: 1px solid green;
-
-    display: flex;
-    flex-direction: column;
-`
 export default App
