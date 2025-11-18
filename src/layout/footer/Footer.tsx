@@ -4,7 +4,7 @@ import styled from "styled-components";
 export function Footer() {
     return (
         <StyledFooter>
-            <span>Design By Rauliqbal</span>
+            <Name>Design By Rauliqbal</Name>
         </StyledFooter>
     );
 };
@@ -16,4 +16,6 @@ const StyledFooter = styled.footer`
     align-items: center;
     
     background-color: rgba(69, 129, 246, 1);
+`
+const Name = styled.span`
 `

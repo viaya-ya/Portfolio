@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import main from "../../../assets/webp/main.webp";
+import main from "../../../assets/images/webp/main.webp";
 import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 
 export function Main() {

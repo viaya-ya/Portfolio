@@ -1,6 +1,6 @@
+import * as React from "react";
 import styled from "styled-components";
-import React from "react";
-import circleFon from "../../../../assets/svg/circleFon.svg";
+import circleFon from "../../../../assets/images/svg/circleFon.svg";
 
 type Props = {
     svg: React.ReactNode;
@@ -10,12 +10,13 @@ type Props = {
 export function Contact(props: Props) {
     return (
         <StyledContact href="#">
-            <article>
-                <ContactBackgroundImage>
+            <ContactArticle>
+                <IconWrapper>
+                    <img src={circleFon} alt=""/>
                     {props.svg}
-                </ContactBackgroundImage>
+                </IconWrapper>
                 <ContactTitle>{props.title}</ContactTitle>
-            </article>
+            </ContactArticle>
         </StyledContact>
     );
 };
@@ -25,9 +26,29 @@ const StyledContact = styled.a`
     max-width: 240px;
     border: 1px solid aqua;
 `
-const ContactTitle = styled.h3``
+const IconWrapper = styled.div`
+    position: relative;
+    width: 166px;
+    height: 160px;
 
-const ContactBackgroundImage = styled.div`
-    background-image: url(${circleFon});
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+    }
 `
-
+const ContactTitle = styled.h3``
+const ContactArticle = styled.article`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`

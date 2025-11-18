@@ -1,4 +1,4 @@
-import iconSprite from "../../assets/svg/sprite.svg"
+import iconSprite from "../../assets/images/svg/sprite.svg"
 
  export type IconProps = {
     iconId: string;

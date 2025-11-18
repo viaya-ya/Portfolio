@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import sendPay from "../../../assets/webp/sendPay.webp";
-import commerce from "../../../assets/webp/e-commerce.webp";
-import edtech from "../../../assets/webp/Edtech.webp";
+import sendPay from "../../../assets/images/webp/sendPay.webp";
+import commerce from "../../../assets/images/webp/e-commerce.webp";
+import edtech from "../../../assets/images/webp/Edtech.webp";
 import {Work} from "./work/Work.tsx";
 import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 import {SectionTitle} from "../../../components/SectionTitle.tsx";
@@ -21,4 +21,5 @@ export function Works() {
 
 const StyledWorks = styled.section`
     min-height: 100vh;
+    background-color: brown;
 `
