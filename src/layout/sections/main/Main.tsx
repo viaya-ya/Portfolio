@@ -41,20 +41,17 @@ const Hello = styled.span`
     font-size: 35px;
     color: ${Theme.colors.primary};
     margin-top: 45px;
-    margin-bottom: 12px;
-
 `
 const Name = styled.span`
     font-weight: 600;
     font-size: 50px;
     color: ${Theme.colors.primary};
-    margin-bottom: 12px;
 `
 const Title = styled.h1`
     font-weight: 600;
     font-size: 50px;
     color: ${Theme.colors.primary};
-    margin-bottom: 32px;
+    margin-bottom: 25px;
 `
 const Descriprion = styled.p`
     font-weight: 400;
