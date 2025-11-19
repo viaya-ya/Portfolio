@@ -19,11 +19,13 @@ export function Header() {
 };
 
 const StyledHeader = styled.header`
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    //position: fixed;
+    //top: 0;
+    //left: 0;
+    //right: 0;
     padding: 14px 0;
-    border: 1px solid blue;
+    margin-top: 35px;
+    margin-bottom: 40px;
+    //outline: 1px solid blue;
     z-index: 9999;
 `

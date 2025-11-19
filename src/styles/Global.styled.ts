@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        scroll-behavior: smooth;
     }
     
     body {
@@ -32,4 +33,15 @@ export const GlobalStyle = createGlobalStyle`
         border: none;
     }
     
+    section{
+        margin-bottom: 168px;
+    }
+    
+    section:first-of-type {
+        margin-bottom: 118px;
+    }
+
+    section:last-of-type {
+        margin-bottom: 0;
+    }
 `

@@ -11,4 +11,12 @@ export const ButtonLink = styled.a`
     color: ${Theme.colors.white};
     background-color: ${Theme.colors.button};
     border-radius: 10px;
+    transition: 0.15s;
+
+    &:hover {
+        background-color: ${Theme.colors.white};
+        border: 2px solid ${Theme.colors.primary};
+        color: ${Theme.colors.secondary};
+    }
 `
+

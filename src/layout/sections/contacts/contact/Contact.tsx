@@ -1,15 +1,17 @@
 import * as React from "react";
 import styled from "styled-components";
 import circleFon from "../../../../assets/images/svg/circleFon.svg";
+import {Theme} from "../../../../styles/Theme.ts";
 
 type Props = {
     svg: React.ReactNode;
     title: string;
+    href?: string;
 };
 
 export function Contact(props: Props) {
     return (
-        <StyledContact href="#">
+        <StyledContact href={props.href} target={props.href?.startsWith("http") ? "_blank" : undefined}>
             <ContactArticle>
                 <IconWrapper>
                     <img src={circleFon} alt=""/>
@@ -24,13 +26,12 @@ export function Contact(props: Props) {
 const StyledContact = styled.a`
     width: 100%;
     max-width: 240px;
-    border: 1px solid aqua;
 `
 const IconWrapper = styled.div`
     position: relative;
     width: 166px;
     height: 160px;
-
+    margin-bottom: 30px;
     img {
         width: 100%;
         height: 100%;
@@ -45,7 +46,16 @@ const IconWrapper = styled.div`
         pointer-events: none;
     }
 `
-const ContactTitle = styled.h3``
+const ContactTitle = styled.h3`
+    font-weight: 400;
+    font-size: 35px;
+    letter-spacing: 0.3rem;
+    color: ${Theme.colors.blackContact};
+
+    &:hover{
+        color: ${Theme.colors.secondary};
+    }
+`
 const ContactArticle = styled.article`
     display: flex;
     flex-direction: column;

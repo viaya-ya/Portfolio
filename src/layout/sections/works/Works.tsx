@@ -5,21 +5,22 @@ import edtech from "../../../assets/images/webp/Edtech.webp";
 import {Work} from "./work/Work.tsx";
 import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 import {SectionTitle} from "../../../components/SectionTitle.tsx";
+import {Container} from "../../../components/Container.ts";
 
 export function Works() {
     return (
-        <StyledWorks>
-            <SectionTitle>My Portfolio</SectionTitle>
-            <FlexWrapper justify="space-between" wrap="wrap">
-                <Work src={sendPay} alt="sendPay" title={"Front-End Developer"}/>
-                <Work src={commerce} alt="commerce" title={"Back-End Developer"}/>
-                <Work src={edtech} alt="edtech" title={"UI/UX Designer"}/>
-            </FlexWrapper>
+        <StyledWorks id="portfolio">
+            <Container>
+                <SectionTitle normal={"My"} bold={"Portfolio"}/>
+                <FlexWrapper justify="space-between" wrap="wrap">
+                    <Work src={sendPay} alt="sendPay" title={"SendPay"} isIcon={true}/>
+                    <Work src={commerce} alt="commerce" title={"E - Commerce"}/>
+                    <Work src={edtech} alt="edtech" title={"Edtech"}/>
+                </FlexWrapper>
+            </Container>
         </StyledWorks>
     );
 };
 
 const StyledWorks = styled.section`
-    min-height: 100vh;
-    background-color: brown;
 `

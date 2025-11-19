@@ -12,7 +12,6 @@ export function Logo() {
 
 const StyledLogo = styled.a`
     letter-spacing: 0.205em;
-    border: 1px solid blue;
 `
 const LeftLogo = styled.span`
     font-size: 25px;
