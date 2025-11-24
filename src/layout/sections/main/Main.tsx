@@ -51,7 +51,6 @@ const Title = styled.h1`
     font-weight: 600;
     font-size: 50px;
     color: ${Theme.colors.primary};
-    margin-bottom: 25px;
 `
 const Descriprion = styled.p`
     font-weight: 400;

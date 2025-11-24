@@ -12,6 +12,7 @@ export const ButtonLink = styled.a`
     background-color: ${Theme.colors.button};
     border-radius: 10px;
     transition: 0.15s;
+    white-space: nowrap;
 
     &:hover {
         background-color: ${Theme.colors.white};

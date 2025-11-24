@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {FlexWrapper} from "../../../../components/FlexWrapper.tsx";
 
 type Props = {
     src: string;
@@ -11,16 +10,19 @@ type Props = {
 export function Skill(props: Props) {
     return (
         <StyledSkill>
-            <FlexWrapper direction="column" justify="center" align={"center"}>
                 <SkillImage src={props.src} alt={props.alt}/>
                 <SkillTitle>{props.title[0]} <span>{props.title[1]}</span> </SkillTitle>
                 <SkillText>{props.description}</SkillText>
-            </FlexWrapper>
         </StyledSkill>
     );
 };
 
 const StyledSkill = styled.article`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
     width: 100%;
     max-width: 348px;
     border-radius: 14px;
@@ -40,7 +42,6 @@ const SkillTitle = styled.h3`
     span {
         font-weight: 400;
     }
-
 `
 const SkillText = styled.p`
     font-weight: 400;

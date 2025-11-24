@@ -7,29 +7,28 @@ type WorkProps = {
     src: string;
     alt: string;
     title: string;
+    background: string;
+    before?: string;
+    after?: string;
 };
 
 export function Work(props: WorkProps) {
     return (
-        <StyledWork>
+        <StyledWork background={props.background}>
             <FlexWrapper direction={"column"}>
-                <SkillTitle>
-                    {
-                        props.isIcon
-                            ? <Icon iconId="emojione" height="51" width="51" viewBox="0 0 51 51"/>
-                            : null
-                    }
+                <SkillTitle before={props.before} after={props.after}>
+                    {props.isIcon && (
+                        <Icon iconId="emojione" height="51" width="51" viewBox="0 0 51 51"/>
+                    )}
                     <span>{props.title}</span>
                 </SkillTitle>
-                <IconWrapper>
-                    <SkillImage src={props.src} alt={props.alt}/>
-                </IconWrapper>
+                <SkillImage src={props.src} alt={props.alt}/>
             </FlexWrapper>
         </StyledWork>
     );
 };
 
-const StyledWork = styled.article`
+const StyledWork = styled.article<{ background: string }>`
     width: 100%;
     max-width: 348px;
 
@@ -37,40 +36,45 @@ const StyledWork = styled.article`
     padding: 16px 12px 16px 15px;
     box-shadow: 0px 6px 30px 1px #00000040;
 
-`
-const SkillTitle = styled.h3`
+    background-image: url(${props => props.background});
+    background-repeat: no-repeat;
+    background-position: 16px 18px;
+`;
+
+const SkillTitle = styled.h3<{before?: string; after?: string}>`
+    height: 52px;
     border: 1px solid red;
 
     display: flex;
     align-items: center;
 
-    //font-family: Montserrat;
     font-weight: 600;
     font-size: 25px;
 
     color: #6C63FF;
-`
+
+    span {
+        position: relative;
+
+        &::after {
+            content: "${props => props.after || ""}" " ${props => props.before || ""}";
+            left: ${props => props.before ? 0 : " "};
+            right: ${props => props.after ? 0 : " "};
+            font-size: 13px;
+            
+            position: absolute;
+            bottom: -15px;
+            //font-family: Montserrat;
+            font-weight: 600;
+            
+        }
+    }
+`;
+
 const SkillImage = styled.img`
     width: 290px;
     object-fit: cover;
     border-radius: 6px;
     box-shadow: 0px 1px 7px 2px #00000040;
-`
-const IconWrapper = styled.div`
-    position: relative;
     align-self: flex-end;
-    
-    &::before {
-        content: '';
-        position: absolute;
-        top: -35%;
-        left: -10%;
-        display: inline-block;
-        width: 195px;
-        height: 195px;
-        background-color: #6C63FF;
-        border-radius: 50%;
-        opacity: 0.25;
-        z-index: -1;
-    }
 `
