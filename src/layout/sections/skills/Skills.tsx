@@ -6,6 +6,7 @@ import {SectionTitle} from "../../../components/SectionTitle.tsx";
 import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 import {Skill} from "./skill/Skill.tsx";
 import {Container} from "../../../components/Container.ts";
+import {Theme} from "../../../styles/Theme.ts";
 
 export function Skills() {
     return (
@@ -28,4 +29,33 @@ export function Skills() {
 };
 
 const StyledSkills = styled.section`
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 5%;
+        left: 12%;
+        width: 115px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: ${Theme.colors.backgroundElement};
+        opacity: 0.2;
+        filter: blur(25px); /* регулируй значение по вкусу */
+        z-index: -1;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        bottom: -30%;
+        left: 55%;
+        width: 200px;
+        height: 210px;
+        border-radius: 50%;
+        background-color: ${Theme.colors.backgroundElement};
+        opacity: 0.2;
+        filter: blur(25px); /* регулируй значение по вкусу */
+        z-index: -1;
+    }
 `
