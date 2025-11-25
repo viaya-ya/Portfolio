@@ -10,13 +10,15 @@ type WorkProps = {
     background: string;
     before?: string;
     after?: string;
+    colorTitle?: string;
 };
 
 export function Work(props: WorkProps) {
     return (
         <StyledWork background={props.background}>
             <FlexWrapper direction={"column"}>
-                <SkillTitle before={props.before} after={props.after}>
+                <SkillTitle isIcon={props.isIcon} colorTitle={props.colorTitle} before={props.before}
+                            after={props.after}>
                     {props.isIcon && (
                         <Icon iconId="emojione" height="51" width="51" viewBox="0 0 51 51"/>
                     )}
@@ -41,32 +43,32 @@ const StyledWork = styled.article<{ background: string }>`
     background-position: 16px 18px;
 `;
 
-const SkillTitle = styled.h3<{before?: string; after?: string}>`
+const SkillTitle = styled.h3<{ isIcon?: boolean, colorTitle?: string, before?: string; after?: string }>`
     height: 52px;
-    border: 1px solid red;
-
+    
     display: flex;
     align-items: center;
 
     font-weight: 600;
     font-size: 25px;
 
-    color: #6C63FF;
+    color: ${props => props.colorTitle || "#6C63FF"};
 
     span {
         position: relative;
+        margin-left: ${props => props.isIcon ? "14px": null};
 
         &::after {
             content: "${props => props.after || ""}" " ${props => props.before || ""}";
             left: ${props => props.before ? 0 : " "};
             right: ${props => props.after ? 0 : " "};
             font-size: 13px;
-            
+
             position: absolute;
             bottom: -15px;
             //font-family: Montserrat;
             font-weight: 600;
-            
+
         }
     }
 `;

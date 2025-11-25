@@ -34,6 +34,33 @@ export function Main() {
 };
 
 const StyledMain = styled.section`
+    position: relative;
+    &::before{
+            position: absolute;
+            content: "";
+            top: -5%;
+            left: 20%;
+            width: 142px;
+            height: 132px;
+            border-radius: 50%;
+            background-color: ${Theme.colors.backgroundElement};
+            opacity: 0.2;
+            filter: blur(25px); /* регулируй значение по вкусу */
+    }
+
+    &::after{
+        position: absolute;
+        content: "";
+        bottom: -5%;
+        left: 35%;
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        background-color: ${Theme.colors.backgroundElement};
+        opacity: 0.2;
+        filter: blur(25px); /* регулируй значение по вкусу */
+    }
+    
 `
 
 const Hello = styled.span`

@@ -7,6 +7,7 @@
         blackAdditional: "#000000",
         blackContact: "#3F3D56",
         white: "#FFFFFF",
-        button:"#608AF5"
+        button:"#608AF5",
+        backgroundElement: "#0E85F3",
     }
  }

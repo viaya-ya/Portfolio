@@ -16,9 +16,9 @@ export function Works() {
             <Container>
                 <SectionTitle normal={"My"} bold={"Portfolio"}/>
                 <FlexWrapper justify="space-between" wrap="wrap">
-                    <Work src={sendPay} alt="sendPay" title={"SendPay"} isIcon={true} background={ellipse_violet}/>
-                    <Work src={commerce} alt="commerce" title={"E - Commerce"} after={"Website"} background={ellipse_green}/>
-                    <Work src={edtech} alt="edtech" title={"BeatsLearning"} before={'A symphony of skills'} background={ellipse_black}/>
+                    <Work src={sendPay} alt="sendPay" title={"SendPay"}  colorTitle={"#6C63FF"} isIcon={true} background={ellipse_violet}/>
+                    <Work src={commerce} alt="commerce" title={"E - Commerce"}  colorTitle={"#4581F6"} after={"Website"} background={ellipse_green}/>
+                    <Work src={edtech} alt="edtech" title={"BeatsLearning"} colorTitle={"black"} before={'A symphony of skills'} background={ellipse_black}/>
                 </FlexWrapper>
             </Container>
         </StyledWorks>
